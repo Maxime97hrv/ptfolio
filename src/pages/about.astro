@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+
+<BaseLayout title="About | Maxime HERVE" description="About Maxime HERVE">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Maxime HERVE at work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						With my skills in data analysis and statistics, I'm a numbers detective capable of turning data into nuggets of 
+						useful and brilliant knowledge. I juggle programming languages like Python, SAS or SQL to manage databases, 
+						do econometric modeling and datavisualization. <br><br>
+					</p>
+					<p>
+						What sets me apart is my ability to go beyond the numbers and offer meaningful insights that have informed strategic 
+						decision-making in many exciting database management projects. I have an open and inquisitive personality that always 
+						pushes me to learn new and exciting things and to explore outlandish ideas. <br><br>
+
+					</p>
+					<p>
+						Communicating and sharing knowledge is as important to me as finding the best meme of the day. 
+						I believe that knowledge is like a bouncing ball: the more you throw it, the richer it comes back! <br><br>
+
+					</p>
+					<p>
+					So, if your databases give you a headache, let me add a touch of fantasy, while remaining as humble as a discreet 
+					treasure hunter. So, are you ready to embark on the adventure of magic numbers?
+					</p>
+					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Master's degree in data analysis and statistics, Bachelor's degree in economic and financial expertise.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Rigorous, Curious, Autonomous, Versatile and Organized</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
